@@ -33,7 +33,7 @@ download_azurlane () {
 
 if [ ! -f "com.bilibili.AzurLane.apk" ]; then
     echo "Get Azur Lane apk"
-    ./wget https://pkg.biligame.com/games/blhx_7.1.1_20230610_1_20230616_031339_073b2.apk .
+    wget https://pkg.biligame.com/games/blhx_7.1.1_20230610_1_20230616_031339_073b2.apk -O com.bilibili.AzurLane.apk
     download_azurlane
     unzip -o com.bilibili.AzurLane.xapk -d AzurLane
     cp AzurLane/com.bilibili.AzurLane.apk .
