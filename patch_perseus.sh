@@ -1,42 +1,13 @@
 #!/bin/bash
 
-# Download apkeep
-get_artifact_download_url () {
-    # Usage: get_download_url <repo_name> <artifact_name> <file_type>
-    local api_url="https://api.github.com/repos/$1/releases/latest"
-    local result=$(curl $api_url | jq ".assets[] | select(.name | contains(\"$2\") and contains(\"$3\") and (contains(\".sig\") | not)) | .browser_download_url")
-    echo ${result:1:-1}
-}
-
-# Artifacts associative array aka dictionary
-declare -A artifacts
-
-artifacts["apkeep"]="EFForg/apkeep apkeep-x86_64-unknown-linux-gnu"
-artifacts["apktool.jar"]="iBotPeaches/Apktool apktool .jar"
-
-# Fetch all the dependencies
-for artifact in "${!artifacts[@]}"; do
-    if [ ! -f $artifact ]; then
-        echo "Downloading $artifact"
-        curl -L -o $artifact $(get_artifact_download_url ${artifacts[$artifact]})
-    fi
-done
-
-chmod +x apkeep
-
 # Download Azur Lane
-download_azurlane () {
-    if [ ! -f "com.bilibili.AzurLane.xapk" ]; then
-    ./apkeep -a com.bilibili.AzurLane .
-    fi
-}
 
 if [ ! -f "com.bilibili.AzurLane.apk" ]; then
     echo "Get Azur Lane apk"
     wget https://pkg.biligame.com/games/blhx_7.1.1_20230610_1_20230616_031339_073b2.apk -O com.bilibili.AzurLane.xapk -q
     echo "apk downloaded !"
-    # download_azurlane
-    unzip -o com.bilibili.AzurLane.xapk -d AzurLane
+    unzip -o com.bilibili.AzurLane.xapk -d AzurLane -q
+    echo "unzipped !"
     cp AzurLane/com.bilibili.AzurLane.apk .
 fi
 
