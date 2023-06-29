@@ -4,12 +4,8 @@
 
 if [ ! -f "com.bilibili.AzurLane.apk" ]; then
     echo "Get Azur Lane apk"
-    wget https://pkg.biligame.com/games/blhx_7.1.1_20230610_1_20230616_031339_073b2.apk -O com.bilibili.AzurLane.xapk -q
+    wget https://pkg.biligame.com/games/blhx_7.1.1_20230610_1_20230616_031339_073b2.apk -O com.bilibili.AzurLane.apk -q
     echo "apk downloaded !"
-    unzip -q -o com.bilibili.AzurLane.xapk -d AzurLane 
-    ls
-    echo "unzipped !"
-    cp AzurLane/com.bilibili.AzurLane.apk .
 fi
 
 # Download Perseus
