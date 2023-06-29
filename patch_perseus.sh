@@ -33,6 +33,7 @@ download_azurlane () {
 
 if [ ! -f "com.YoStarEN.AzurLane.apk" ]; then
     echo "Get Azur Lane apk"
+    ./apkeep -a com.YoStarEN.AzurLane -l.
     download_azurlane
     unzip -o com.YoStarEN.AzurLane.xapk -d AzurLane
     cp AzurLane/com.YoStarEN.AzurLane.apk .
