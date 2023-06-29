@@ -10,7 +10,7 @@ This repo template will allow you to build Perseus using Github Actions. This wi
 ## How to setup
 1. Create a new PRIVATE repository using this repository as a template ([Guide](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template)).
 2. Go to newly created repo Settings > Actions > General > Workflow permissions > Set Read and Write permission.
-3. Find the download link yourself and replace the link in line 29 in patch_perseus.sh (if you need versions for other regions but not CN version, you also need to change the package name.)
+3. Find the download link yourself and replace the link in line 29 in patch_perseus.sh (if you need versions of other regions, you also need to change the package name, Ctrl+H would do the job.)
 
 ## How to build
 1. Go to Actions -> All workflows -> Perseus Build
