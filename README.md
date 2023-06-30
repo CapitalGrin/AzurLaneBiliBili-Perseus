@@ -2,9 +2,9 @@
 This repo template will allow you to build Perseus using Github Actions. This will helps people who don't want to setup build environments on their machines.
 
 ## Notes
-- The script requires download link, to make it fits CN version and for some cases, apkpure don't have the latest version.
 - Under **NO CIRCUMSTANCES** any APKs will be uploaded to this repository to avoid DMCA.
-- This is only tested on CN version, if you need other version,you need to do some change.
+- This repo was designed for two circumstances: CN version and other regions when apkpure doesn't have the latest version.
+- The ability to edit the code is required
 - I don't use github frequently. So I won't do any Technical support for this.
 
 ## How to setup
@@ -16,3 +16,13 @@ This repo template will allow you to build Perseus using Github Actions. This wi
 1. Go to Actions -> All workflows -> Perseus Build
 2. Run the workflow
 3. Download the APKs from the draft releases
+
+## How to change region
+1. This project can only patch .apk file, if you want to patch .xapk file, uncommennt these 2 lines in patch_perseus.sh
+![image](https://github.com/CapitalGrin/AzurLaneBiliBili-Perseus/assets/109933411/c1d4ea1e-c00f-49d5-969e-11054d6ae8c6)
+Then change the suffix here:
+![image](https://github.com/CapitalGrin/AzurLaneBiliBili-Perseus/assets/109933411/8d721bae-34d8-4edf-8944-fc95e308ab13)
+2. change the download link here in patch_perseus.sh . And make sure the link is not Disposable or Dynamic.
+![image](https://github.com/CapitalGrin/AzurLaneBiliBili-Perseus/assets/109933411/07f37070-015d-4b40-84e1-b23a1f6c856c)
+3. replace ALL the packge name in patch_perseus.sh , Ctrl+F would do the work.(Don't change the suffix though)
+![image](https://github.com/CapitalGrin/AzurLaneBiliBili-Perseus/assets/109933411/d91800e7-ca14-4b91-9931-07acc28a5d56)
