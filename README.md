@@ -20,6 +20,7 @@ This repo template will allow you to build Perseus using Github Actions. This wi
 ## How to change region
 1. This project can only patch .apk file, if you want to patch .xapk file, uncommennt these 2 lines in patch_perseus.sh
 ![image](https://github.com/CapitalGrin/AzurLaneBiliBili-Perseus/assets/109933411/c1d4ea1e-c00f-49d5-969e-11054d6ae8c6)
+
 Then change the suffix here:
 ![image](https://github.com/CapitalGrin/AzurLaneBiliBili-Perseus/assets/109933411/8d721bae-34d8-4edf-8944-fc95e308ab13)
 2. change the download link here in patch_perseus.sh . And make sure the link is not Disposable or Dynamic.
